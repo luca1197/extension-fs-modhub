@@ -1,0 +1,15 @@
+{
+	"dependenciesConfirmation": {
+		"message": "$modName$ benötigt $modCount$ Mods, welche wahrscheinlich für einen reibungslosen Betrieb notwendig sind. Sollen diese Mods heruntergeladen werden?\n\nAchtung: Für diesen Vorgang muss dem Browser das gleichzeitige Herunterladen von mehreren Dateien erlaubt werden.",
+		"description": "Benachrichtigung, welche erscheint, wenn eine Mod, die heruntergeladen werden soll, Abhängigkeiten besitzt.",
+		"placeholders": {
+			"modName": {
+				"content": "$1"
+			},
+			"modCount": {
+				"content": "$2",
+				"example": "0"
+			}
+		}
+	}
+}
