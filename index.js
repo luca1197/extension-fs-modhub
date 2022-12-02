@@ -53,16 +53,18 @@ function AddDownloadButton(btn, absolute) {
 
 }
 
-async function GetDependencies(dom) {
+async function GetDependencies(modPageDom) {
 	
 	let deps = []
 
-	let depsDivHeadline = dom.getElementsByClassName("title-mods-label")
-	if (!depsDivHeadline || depsDivHeadline.length === 0) {return []} // = no dependencies
+	let depsDivHeadline = modPageDom.getElementsByClassName("title-mods-label")
+	if (!depsDivHeadline || depsDivHeadline.length === 0) { // = no dependencies
+		return []
+	}
 
 	let depsDiv = depsDivHeadline[0].parentElement
-	let depsA = depsDiv.querySelectorAll("a")
-	for (let elem of depsA) {
+	let depsLinkTags = depsDiv.querySelectorAll("a")
+	for (let elem of depsLinkTags) {
 		if (elem.target === "_blank") {continue} // Logo of the creator
 		let href = elem.href
 		deps.push(href)
@@ -85,10 +87,10 @@ async function DownloadURL(url) {
 
 async function DownloadMod(modItem, modURL) {
 
-	let res = await fetch(modURL)
-	let text = await res.text()
-	let dom = new DOMParser().parseFromString(text, "text/html")
-	if (!dom) {return}
+	let modPageRes = await fetch(modURL)
+	let modPageText = await modPageRes.text()
+	let modPageDom = new DOMParser().parseFromString(modPageText, "text/html")
+	if (!modPageDom) {return}
 
 	// Get download link
 	let downloadBox = dom.getElementsByClassName("download-box")[0]
@@ -106,7 +108,7 @@ async function DownloadMod(modItem, modURL) {
 		let modName = (modItem.querySelector("h4") || modItem.querySelector("h3")).innerText
 		if (confirm(chrome.i18n.getMessage("dependenciesConfirmation", [modName, dependencies.length]))) {
 			for (let dep of dependencies) {
-				await new Promise(resolve => setTimeout(resolve, 1000))
+				await new Promise(resolve => setTimeout(resolve, 1500))
 				DownloadURL(dep)
 			}
 		}
