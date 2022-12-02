@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"name": "Farming Simulator ModHub Utilities",
-	"description": "Useful additions to the Farming Simulator ModHub website",
+	"description": "Useful additions to the Farming Simulator ModHub.",
 	"version": "1.0.0",
 	"default_locale": "en",
 	"icons": {
