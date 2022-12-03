@@ -93,7 +93,7 @@ async function DownloadMod(modItem, modURL) {
 	if (!modPageDom) {return}
 
 	// Get download link
-	let downloadBox = dom.getElementsByClassName("download-box")[0]
+	let downloadBox = modPageDom.getElementsByClassName("download-box")[0]
 	if (!downloadBox) {return}
 
 	let downloadURL = downloadBox.querySelector("a").href
@@ -103,7 +103,7 @@ async function DownloadMod(modItem, modURL) {
 	DownloadURL(downloadURL)
 
 	// Check dependencies
-	let dependencies = await GetDependencies(dom)
+	let dependencies = await GetDependencies(modPageDom)
 	if (dependencies && dependencies.length > 0) {
 		let modName = (modItem.querySelector("h4") || modItem.querySelector("h3")).innerText
 		if (confirm(chrome.i18n.getMessage("dependenciesConfirmation", [modName, dependencies.length]))) {
