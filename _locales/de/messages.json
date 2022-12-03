@@ -1,6 +1,6 @@
 {
 	"dependenciesConfirmation": {
-		"message": "$modName$ benötigt $modCount$ Mods, welche wahrscheinlich für einen reibungslosen Betrieb notwendig sind. Sollen diese Mods heruntergeladen werden?\n\nAchtung: Für diesen Vorgang muss dem Browser das gleichzeitige Herunterladen von mehreren Dateien erlaubt werden.\n\nAufgrund technischer Limitierungen werden unter Umständen nicht alle Mods gleichzeitig heruntergeladen.",
+		"message": "$modName$ benötigt $modCount$ Mod(s), welche wahrscheinlich für einen reibungslosen Betrieb notwendig sind. Sollen diese Mods heruntergeladen werden?\n\nAchtung: Für diesen Vorgang muss dem Browser das gleichzeitige Herunterladen von mehreren Dateien erlaubt werden.\n\nAufgrund technischer Limitierungen werden unter Umständen nicht alle Mods gleichzeitig heruntergeladen.",
 		"description": "Benachrichtigung, welche erscheint, wenn eine Mod, die heruntergeladen werden soll, Abhängigkeiten besitzt.",
 		"placeholders": {
 			"modName": {

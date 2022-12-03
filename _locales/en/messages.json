@@ -1,6 +1,6 @@
 {
 	"dependenciesConfirmation": {
-		"message": "$modName$ has $modCount$ mods that are most likely required for it to work. Would you like to download them?\n\nAttention: Allowing your browser to download multiple files is required for this operation.\n\nDue to technical limitations, not all mods may be downloaded at the same time.",
+		"message": "$modName$ has $modCount$ mod(s) that are most likely required for it to work. Would you like to download them?\n\nAttention: Allowing your browser to download multiple files is required for this operation.\n\nDue to technical limitations, not all mods may be downloaded at the same time.",
 		"description": "Alert that appears if a mod that the user wants to download has dependencies.",
 		"placeholders": {
 			"modName": {
